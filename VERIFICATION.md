@@ -29,6 +29,14 @@
 | 커널 make 도움말 | PASS. upstream Linux 4.18 소스에서 menuconfig·modules_install·bzImage 목표 표시. 실제 커널 빌드·설치·부팅은 수행하지 않음 |
 | dump 매뉴얼 | Rocky 설치 버전에서 부분 파일·디렉터리 입력의 제한(레벨0, -u 불가, 동일 파일시스템)을 확인. dump/restore 실제 복원은 미실행 |
 
+## 공개 배포 검사
+
+- GitHub 저장소의 visibility가 `PUBLIC`, 기본 브랜치가 `main`인지 확인했습니다.
+- 최초 게시 커밋 `c242b16`에서 GitHub Actions의 `Check study reference` 검사가 성공했습니다.
+- Rocky 8.9 VM에 `wget` 1.19.5와 의존 패키지 libmetalink를 설치한 뒤, 인증 없이 공개 `main.tar.gz`를 실제 다운로드했습니다.
+- README의 `tar --strip-components=1` 절차로 새 임시 폴더에 풀고, 내려받은 파일에서 `scripts/check.py`·문항 ID 검색·한글 검색을 통과했습니다. 생성된 `REFERENCE.txt`도 확인했습니다.
+- 다운로드 검증의 임시 폴더는 제거했습니다. 위 wget 설치 외에는 서비스 설정·실제 디스크를 바꾸지 않았습니다.
+
 ## 검증하지 않은 범위
 
 모든 문항의 빈칸 정답, 대체 답안 인정 여부, 전체 서비스 통신, 실제 디스크 포맷·RAID/LVM·쿼터·파일시스템 백업 복원은 미검증입니다. 색인 `mapped`는 이 한계를 숨기는 완료 표식이 아닙니다.
