@@ -1,0 +1,13 @@
+$TTL 1h
+@ IN SOA ns1.example.test. hostmaster.example.test. (
+    2026111401 ; serial
+    1h         ; refresh
+    15m        ; retry
+    1w         ; expire
+    5m )       ; negative caching TTL
+  IN NS ns1.example.test.
+  IN MX 10 mail.example.test.
+ns1  IN A 192.0.2.10
+mail IN A 192.0.2.20
+web  IN A 192.0.2.30
+www  IN CNAME web.example.test.

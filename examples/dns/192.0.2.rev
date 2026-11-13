@@ -1,0 +1,7 @@
+$TTL 1h
+@ IN SOA ns1.example.test. hostmaster.example.test. (
+    2026111401 1h 15m 1w 5m )
+  IN NS ns1.example.test.
+10 IN PTR ns1.example.test.
+20 IN PTR mail.example.test.
+30 IN PTR web.example.test.
